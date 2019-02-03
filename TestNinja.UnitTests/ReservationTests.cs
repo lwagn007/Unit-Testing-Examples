@@ -6,7 +6,7 @@ namespace TestNinja.UnitTests
 {
     // Using the MSTest Framework
     // No Logic in Unit Tests
-    // Tests should be clean, readable, maintainable, and isolated
+    // Tests should be clean, readable, maintainable, and isolated(isolated meaning that each test should run with a clean fresh state as if it is the only test in the project)
     // Tests should not be to specific or to general
     [TestClass]
     public class ReservationTests

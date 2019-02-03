@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using NUnit.Framework;
 using TestNinja.Fundamentals;
 using Math = TestNinja.Fundamentals.Math;
@@ -29,6 +30,7 @@ namespace TestNinja.UnitTests
         }
 
         [Test]
+        [Ignore("Test of the ignore attribute")]
         public void Add_WhenCalled_ShouldReturnSumOfArguments()
         {
             var result = _math.Add(1, 2);
@@ -58,6 +60,27 @@ namespace TestNinja.UnitTests
             var result = _math.Max(1, 1);
 
             Assert.That(result, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void GetOddNumbers_LimitIsGreaterThanZero_ReturnOddNumbersUpToLimit()
+        {
+            var result = _math.GetOddNumbers(5);
+
+            // General asserts
+            Assert.That(result, Is.Not.Empty);
+            Assert.That(result.Count(), Is.EqualTo(3));
+
+            // More specific
+            Assert.That(result, Does.Contain(1));
+            Assert.That(result, Does.Contain(3));
+            Assert.That(result, Does.Contain(5));
+
+            //This does the same as the lines 75-77
+            Assert.That(result, Is.EquivalentTo(new[] { 1, 3, 5 }));
+
+            Assert.That(result, Is.Ordered);
+            Assert.That(result, Is.Unique);
         }
     }
 }

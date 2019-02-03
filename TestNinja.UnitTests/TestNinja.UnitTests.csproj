@@ -59,6 +59,10 @@
     <Compile Include="ReservationNUnitTests.cs" />
     <Compile Include="MathTests.cs" />
     <Compile Include="MathNUnitTests.cs" />
+    <Compile Include="HtmlFormatterNUnitTests.cs" />
+    <Compile Include="HtmlFormatterTests.cs" />
+    <Compile Include="CustomerControllerTests.cs" />
+    <Compile Include="ErrorLoggerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
